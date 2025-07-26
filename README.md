@@ -29,6 +29,11 @@ I'm a passionate and experienced software developer specializing in both front-e
 
 ---
 
+## Personal Projects 
+
+ **Hymnverse** - https://hymnverse.com/
+   - Hymn website built with shadcdn/vue & vue 3 with pinia and backend, built with Bun & Hono.js 
+
 ## 📫 Let's Connect
 
 Feel free to reach out or explore my repositories to see what I’m working on!
