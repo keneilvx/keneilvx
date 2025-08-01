@@ -37,3 +37,6 @@ I'm a passionate and experienced software developer specializing in both front-e
 ## 📫 Let's Connect
 
 Feel free to reach out or explore my repositories to see what I’m working on!
+
+New Projects VetFlowCore - ASP.NET Core API backend for a Vet management system 
+
