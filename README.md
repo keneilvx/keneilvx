@@ -32,7 +32,8 @@ I'm a passionate and experienced software developer specializing in both front-e
 ## Personal Projects 
 
  **Hymnverse** - https://hymnverse.com/
-   - Hymn website built with shadcdn/vue & vue 3 with pinia and backend, built with Bun & Hono.js 
+   - Hymn website built with shadcdn/vue & vue 3 with pinia and backend, built with Bun & Hono.js
+   - Dolares a npm package for formatting values into a specfic currency format, plan to support conversion in the future
 
 ## 📫 Let's Connect
 
