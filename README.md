@@ -33,11 +33,13 @@ I'm a passionate and experienced software developer specializing in both front-e
 
  **Hymnverse** - https://hymnverse.com/
    - Hymn website built with shadcdn/vue & vue 3 with pinia and backend, built with Bun & Hono.js
-   - Dolares a npm package for formatting values into a specfic currency format, plan to support conversion in the future
+     
+**Dolares**  - https://www.npmjs.com/package/dolares
+   - Dolares is an npm package for formatting values into a specific currency format.
 
 ## 📫 Let's Connect
 
 Feel free to reach out or explore my repositories to see what I’m working on!
 
-New Projects VetFlowCore - ASP.NET Core API backend for a Vet management system and NestJS API For another project I'm working on 
+New Projects VetFlowCore - ASP.NET Core API backend for a Vet management system, and NestJS API for another project I'm working on 
 
