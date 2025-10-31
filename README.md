@@ -7,7 +7,13 @@ I'm a passionate and experienced software developer specializing in both front-e
 ## 🛠️ Tech Stack
 
 ### Languages  
-- **C#**, **JavaScript**, **Python**, **TypeScript**, **HTML5**, **CSS3**, **VB.Net**, **Dart**, **SQL**
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=cs,javascript,ts,py,dart,html,css,nodejs,sass,tailwind" />
+  </a>
+</p>
+
 
 ### Frameworks & Libraries  
 - **Vue.js**, **Nuxt**, **.NET**, **Express**, **Flutter**, **Cordova**, **Bootstrap**, **Tailwind CSS**, **single-spa**, **Hono**
