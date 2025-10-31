@@ -14,6 +14,9 @@ I'm a passionate and experienced software developer specializing in both front-e
   </a>
 </p>
 
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=keneilvx&stats" />
+</p>
 
 ### Frameworks & Libraries  
 - **Vue.js**, **Nuxt**, **.NET**, **Express**, **Flutter**, **Cordova**, **Bootstrap**, **Tailwind CSS**, **single-spa**, **Hono**
@@ -34,6 +37,9 @@ I'm a passionate and experienced software developer specializing in both front-e
 - 📈 Always eager to learn and adapt to new technologies  
 
 ---
+
+###
+
 
 ## Personal Projects 
 
