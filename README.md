@@ -15,7 +15,7 @@ I'm a passionate and experienced software developer specializing in both front-e
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=keneilvx&stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=keneilvx&layout=compact&bg_color=0D1117&title_color=C0392B&text_color=E8E8E8&icon_color=1AB2C8&border_color=8B1515" />
 </p>
 
 ### Frameworks & Libraries  
