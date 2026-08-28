@@ -1,6 +1,10 @@
-# 👋 Hi, I'm Keneil Smith
-
-I'm a passionate and experienced software developer specializing in both front-end and back-end development. I enjoy building scalable, maintainable applications and collaborating with cross-functional teams to solve real-world problems with clean, efficient code.
+<a href="https://github.com/keneilvx/keneilvx">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/keneilvx/keneilvx/main/dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/keneilvx/keneilvx/main/light.svg">
+    <img alt="Keneil Smith — terminal profile card" src="https://raw.githubusercontent.com/keneilvx/keneilvx/main/dark.svg" width="100%">
+  </picture>
+</a>
 
 ---
 
@@ -14,9 +18,13 @@ I'm a passionate and experienced software developer specializing in both front-e
   </a>
 </p>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=keneilvx&layout=compact&bg_color=0D1117&title_color=C0392B&text_color=E8E8E8&icon_color=1AB2C8&border_color=8B1515" />
-</p>
+<a href="https://github.com/keneilvx/keneilvx">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/keneilvx/keneilvx/main/heatmap-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/keneilvx/keneilvx/main/heatmap-light.svg">
+    <img alt="Contribution activity" src="https://raw.githubusercontent.com/keneilvx/keneilvx/main/heatmap-dark.svg" width="100%">
+  </picture>
+</a>
 
 ### Frameworks & Libraries  
 - **Vue.js**, **Nuxt**, **.NET**, **Express**, **Flutter**, **Cordova**, **Bootstrap**, **Tailwind CSS**, **single-spa**, **Hono**
