@@ -1,5 +1,9 @@
 import { Jimp, intToRGBA } from "jimp";
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const USERNAME = "keneilvx";
 const WIDTH = 1180;
@@ -26,11 +30,11 @@ const THEMES = {
     border0: "#8B1A1A",
     border1: "#C0392B",
     border2: "#E74C3C",
-    accent: "#1AB2C8",
+    accent: "#FF4444",
     text: "#E8E0E0",
-    textDim: "#7A6060",
+    textDim: "#A06060",
     leader: "#2A1A1A",
-    scan: "#1AB2C8",
+    scan: "#FF4444",
     marker: "#E5C100",
     heat: ["#110D0D", "#5C1010", "#8B1A1A", "#C0392B", "#E74C3C"],
   },
@@ -43,18 +47,18 @@ const THEMES = {
     border0: "#8B1A1A",
     border1: "#C0392B",
     border2: "#E74C3C",
-    accent: "#0E7490",
+    accent: "#C0392B",
     text: "#1A0A0A",
-    textDim: "#7A6060",
+    textDim: "#7A4040",
     leader: "#F0D0D0",
-    scan: "#0E7490",
+    scan: "#C0392B",
     marker: "#B45309",
     heat: ["#F0E0E0", "#FBBBB9", "#F08080", "#C0392B", "#8B1A1A"],
   },
 };
 
 async function buildAscii(path) {
-  const img = await Jimp.read(path);
+  const img = await Jimp.read(await readFile(path));
   img.resize({ w: ASCII_COLS, h: ASCII_ROWS });
   const lum = (x, y) => {
     const { r, g, b } = intToRGBA(img.getPixelColor(x, y));
@@ -311,7 +315,7 @@ function buildHeatmapSvg(theme, calendar) {
     .map(({d,label}) => `<text x="${gridX-10}" y="${gridY+d*(cell+gap)+9}" text-anchor="end" class="heat-daylabel">${label}</text>`).join("");
   const legendX = W - 30 - t.heat.length * 14 - 46;
   const legend = t.heat.map((c,i) => `<rect x="${legendX+34+i*14}" y="${H-22}" width="10" height="10" rx="2" fill="${c}"/>`).join("");
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="'Courier New', Courier, monospace">
 <defs>
   <radialGradient id="hbgGlow" cx="18%" cy="12%" r="90%">
     <stop offset="0%" stop-color="${t.bg1}"/>
@@ -412,7 +416,7 @@ function buildSvg(theme, asciiRows, stats, updatedAt) {
   const H = PANEL_Y + panelHeight + 62;
   const asciiLineHeight = (panelHeight - 44) / asciiRows.length;
   const asciiSvg = asciiRows.map((row, i) => `<text x="${PANEL_X+14}" y="${PANEL_Y+26+i*asciiLineHeight}" textLength="${LEFT_W-28}" lengthAdjust="spacingAndGlyphs" class="ascii-row">${row}</text>`).join("");
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${H}" viewBox="0 0 ${WIDTH} ${H}" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${H}" viewBox="0 0 ${WIDTH} ${H}" font-family="'Courier New', Courier, monospace">
 <defs>
   <radialGradient id="bgGlow" cx="24%" cy="14%" r="85%">
     <stop offset="0%" stop-color="${t.bg1}"/><stop offset="100%" stop-color="${t.bg0}"/>
@@ -481,16 +485,16 @@ function buildSvg(theme, asciiRows, stats, updatedAt) {
 }
 
 async function main() {
-  const asciiRows = await buildAscii("avatar.png");
+  const asciiRows = await buildAscii(resolve(__dirname, "avatar.png"));
   const stats = await fetchGitHubStats();
   const calendar = await fetchContributionCalendar();
   const updatedAt = new Date().toISOString().slice(0, 16).replace("T", " ") + " UTC";
   for (const theme of Object.values(THEMES)) {
     const svg = buildSvg(theme, asciiRows, stats, updatedAt);
-    await writeFile(`${theme.name}.svg`, svg, "utf8");
+    await writeFile(resolve(__dirname, `${theme.name}.svg`), svg, "utf8");
     console.log(`wrote ${theme.name}.svg`);
     const heatmap = buildHeatmapSvg(theme, calendar);
-    await writeFile(`heatmap-${theme.name}.svg`, heatmap, "utf8");
+    await writeFile(resolve(__dirname, `heatmap-${theme.name}.svg`), heatmap, "utf8");
     console.log(`wrote heatmap-${theme.name}.svg`);
   }
 }
